@@ -1,8 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
+import './app.scss'
+
 const App = () => {
-  return <div>Hello React!!</div>;
+  return <p>Hello React!!</p>;
 }
 
 ReactDOM.render(<App />, document.getElementById("app"));
