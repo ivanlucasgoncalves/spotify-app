@@ -1,25 +1,43 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // Generates an HTML file with <script> injected
 const htmlPlugin = new HtmlWebPackPlugin({
   inject: false,
-  hash: true,
   template: './src/index.html',
   filename: 'index.html'
 });
 
+// Detecting HMR state - css-hot-loader plugin require the output css file name static
+const isHot = path.basename(require.main.filename) === 'webpack-dev-server.js';
+
 // Extract text from a bundle, or bundles, into a separate file
 const cssPlugin = new MiniCssExtractPlugin({
-  filename: 'style.[hash].css'
+  filename: isHot ? 'css/[name].css' : 'css/[name].[hash].css'
 });
 
+// Enabled HMR while the application is running, without a full reload
+const hotModulePlugin = new webpack.HotModuleReplacementPlugin();
+
+// Displayed module name when HMR is enabled
+const namedModulePlugin = new webpack.NamedModulesPlugin();
+
+// Keeping it clean and fresh
+const cleanPlugin = new CleanWebpackPlugin('dist', {});
+
 module.exports = {
-  entry: { main: './src/app.js' },
+  entry: { app: './src/index.js' },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash].js'
+    filename: 'js/[name].[hash].js'
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    hot: true,
+    port: 9000
   },
   module: {
     rules: [
@@ -29,10 +47,10 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.scss$/,
-        loader: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+        test: /\.(scss|css)$/,
+        loader: ['css-hot-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       }
     ]
   },
-  plugins: [htmlPlugin, cssPlugin]
+  plugins: [cleanPlugin, htmlPlugin, cssPlugin, hotModulePlugin, namedModulePlugin]
 };
