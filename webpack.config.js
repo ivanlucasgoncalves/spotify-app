@@ -6,8 +6,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // Generates an HTML file with <script> injected
 const htmlPlugin = new HtmlWebPackPlugin({
-  inject: false,
-  template: './src/index.html',
+  title: 'React app with Webpack 4 | Boilerplate',
+  favicon: 'src/favicon.ico',
+  template: 'src/index.html',
   filename: 'index.html'
 });
 
@@ -49,6 +50,10 @@ module.exports = {
       {
         test: /\.(scss|css)$/,
         loader: ['css-hot-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+      },
+      {
+        test: /\.(pdf|jpg|png|gif|svg|ico)$/,
+        loader: 'url-loader'
       }
     ]
   },
