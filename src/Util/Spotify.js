@@ -1,12 +1,14 @@
+import dotenv from 'dotenv'
 import express from 'express'
 import request from 'request'
 import cors from 'cors'
 import queryString from 'querystring'
 import cookieParser from 'cookie-parser'
 
-const client_id = 'd3d2447808d64a68a24f2e9c88506e5a'
-const client_secret = '473c2b711cd64ea993e84b3ebac47729'
-const redirect_uri = 'http://localhost:8899/callback'
+dotenv.config()
+const client_id = process.env.CLIENT_ID
+const client_secret = process.env.CLIENT_SECRET
+const redirect_uri = process.env.REDIRECT_URI
 
 const generateRandomString = length => {
 	let text = ''
