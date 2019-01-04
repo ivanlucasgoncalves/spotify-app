@@ -23,7 +23,7 @@ const cleanPlugin = new CleanWebpackPlugin('dist', {})
 
 // Generates an HTML file with <script> injected
 const htmlPlugin = new HtmlWebPackPlugin({
-	title: 'React app with Webpack 4 | Boilerplate',
+	title: 'Spotify React app',
 	favicon: 'src/favicon.ico',
 	template: 'src/index.html',
 	filename: 'index.html'
