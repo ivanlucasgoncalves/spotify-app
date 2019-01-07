@@ -31,34 +31,41 @@ h6 {
 	margin: 0;
 }
 
+$green: #1db954;
+$black: #191414;
+
+// Btns
+.btn-green {
+	background-color: $green;
+	color: white;
+}
+
 // Aside
-aside {
-	&.aside {
-		min-height: 100vh;
-		height: 100%;
-		padding: 2rem;
-		border-right: 1px solid rgba(0, 0, 0, 0.1);
+.sidebar {
+	min-height: 100vh;
+	height: 100%;
+	padding: 2rem;
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
 
-		.aside__spotify-logo {
-			max-width: 230px;
-		}
+	&__spotify-logo {
+		max-width: 230px;
+	}
 
-		.aside__user-details {
-			border-top: 1px solid rgba(0, 0, 0, 0.1);
-		}
+	&__user-details {
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+	}
 
-		.aside__user-image {
-			border-radius: 27px;
-			width: 48px;
-			height: 48px;
-			background-color: #eee;
-			display: block;
-			margin-right: 8px;
-		}
+	&__user-image {
+		border-radius: 27px;
+		width: 48px;
+		height: 48px;
+		background-color: #eee;
+		display: block;
+		margin-right: 8px;
+	}
 
-		.aside__user-name {
-			font-size: 1rem;
-		}
+	&__user-name {
+		font-size: 1rem;
 	}
 }
 
