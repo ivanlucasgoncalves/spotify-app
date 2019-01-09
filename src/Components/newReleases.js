@@ -11,7 +11,7 @@ class NewReleases extends React.Component {
 							<img
 								src='http://via.placeholder.com/360'
 								className='card-img-top'
-								height='220'
+								height='260'
 							/>
 							<div className='card-body'>
 								<h5 className='card-title'>Card title</h5>
@@ -28,7 +28,7 @@ class NewReleases extends React.Component {
 							<img
 								src='http://via.placeholder.com/360'
 								className='card-img-top'
-								height='220'
+								height='260'
 							/>
 							<div className='card-body'>
 								<h5 className='card-title'>Card title</h5>
@@ -45,7 +45,7 @@ class NewReleases extends React.Component {
 							<img
 								src='http://via.placeholder.com/360'
 								className='card-img-top'
-								height='220'
+								height='260'
 							/>
 							<div className='card-body'>
 								<h5 className='card-title'>Card title</h5>
@@ -62,7 +62,7 @@ class NewReleases extends React.Component {
 							<img
 								src='http://via.placeholder.com/360'
 								className='card-img-top'
-								height='220'
+								height='260'
 							/>
 							<div className='card-body'>
 								<h5 className='card-title'>Card title</h5>

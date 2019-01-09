@@ -1,0 +1,106 @@
+@import './clean';
+@import './vars';
+@import './login';
+
+#app {
+	color: $black;
+	> .container-fluid {
+		min-height: 100vh;
+	}
+}
+
+// Aside
+.sidebar {
+	min-height: 100vh;
+	height: 100%;
+	padding: 2rem;
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: white;
+
+	&__spotify-logo {
+		max-width: 80%;
+		min-width: 130px;
+	}
+
+	&__title {
+		color: $black;
+	}
+
+	&__user-details {
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+	}
+
+	&__user-image {
+		border-radius: 27px;
+		width: 52px;
+		height: 52px;
+		background-color: #eee;
+		display: block;
+		margin-right: 8px;
+	}
+
+	&__user-name {
+		font-size: 1rem;
+		color: $black;
+	}
+
+	.list-group {
+		display: block;
+		background-color: #fff;
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+		border-radius: 0.25rem;
+		overflow: hidden;
+		&__item {
+			position: relative;
+			display: block;
+			padding: 0.75rem 1.15rem;
+			background-color: #fff;
+			text-decoration: none;
+			color: $black;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+			&:hover {
+				background-color: $green;
+				color: white;
+				small {
+					color: white;
+				}
+			}
+			&:last-child {
+				border-bottom: 0;
+			}
+			small {
+				color: #666;
+			}
+
+			&__title {
+				font-size: 0.95rem;
+				letter-spacing: -0.5px;
+			}
+		}
+	}
+}
+
+//Main
+main {
+	&.main {
+		min-height: 100vh;
+		height: 100%;
+		padding: 2rem;
+		background-color: #f8f8f8;
+		//background: linear-gradient(-45deg, $black -5%, #333);
+
+		.jumbotron {
+			//background-color: $black;
+			hr {
+				border-top: 1px solid rgba(255, 255, 255, 0.3);
+			}
+		}
+
+		.media {
+			img {
+				max-width: 8rem;
+			}
+		}
+	}
+}

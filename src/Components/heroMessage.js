@@ -8,7 +8,7 @@ const HeroMessage = () => {
 		hideHero.parentElement.style.display = 'none'
 	}
 	return (
-		<section className='main__hello jumbotron'>
+		<section className='main__hello jumbotron col-lg-12 col-xl-9'>
 			<h1 className='display-4'>Hello, world!!</h1>
 			<p className='lead'>
 				This is a simple hero unit, a simple jumbotron-style component for
@@ -19,7 +19,7 @@ const HeroMessage = () => {
 				It uses utility classes for typography and spacing to space content out
 				within the larger container.
 			</p>
-			<a className='btn btn-info' href='#' role='button' onClick={handleClick}>
+			<a className='btn btn-green' href='#' role='button' onClick={handleClick}>
 				Close
 			</a>
 		</section>
