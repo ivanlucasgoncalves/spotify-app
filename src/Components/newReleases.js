@@ -1,83 +1,36 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
+import { getNewReleases } from '../actions'
 
 class NewReleases extends React.Component {
+	componentDidMount() {
+		this.props.getNewReleases()
+	}
+	fetchNewReleases = ({ new_releases } = this.props) => {
+		return new_releases.map(album => (
+			<div className='col-6 col-lg-3 mb-4 mb-lg-0'>
+				<img src={album.images[0].url} className='img-fluid rounded' />
+			</div>
+		))
+	}
 	render() {
 		return (
 			<React.Fragment>
 				<h2 className='mb-3'>New Releases</h2>
-				<div className='row'>
-					<div className='col-12 col-md-3'>
-						<div className='card'>
-							<img
-								src='http://via.placeholder.com/360'
-								className='card-img-top'
-								height='260'
-							/>
-							<div className='card-body'>
-								<h5 className='card-title'>Card title</h5>
-								<p className='card-text'>
-									This is a longer card with supporting text below as a natural
-									lead-in to additional content. This content is a little bit
-									longer.
-								</p>
-							</div>
-						</div>
-					</div>
-					<div className='col-12 col-md-3'>
-						<div className='card'>
-							<img
-								src='http://via.placeholder.com/360'
-								className='card-img-top'
-								height='260'
-							/>
-							<div className='card-body'>
-								<h5 className='card-title'>Card title</h5>
-								<p className='card-text'>
-									This is a longer card with supporting text below as a natural
-									lead-in to additional content. This content is a little bit
-									longer.
-								</p>
-							</div>
-						</div>
-					</div>
-					<div className='col-12 col-md-3'>
-						<div className='card'>
-							<img
-								src='http://via.placeholder.com/360'
-								className='card-img-top'
-								height='260'
-							/>
-							<div className='card-body'>
-								<h5 className='card-title'>Card title</h5>
-								<p className='card-text'>
-									This is a longer card with supporting text below as a natural
-									lead-in to additional content. This content is a little bit
-									longer.
-								</p>
-							</div>
-						</div>
-					</div>
-					<div className='col-12 col-md-3'>
-						<div className='card'>
-							<img
-								src='http://via.placeholder.com/360'
-								className='card-img-top'
-								height='260'
-							/>
-							<div className='card-body'>
-								<h5 className='card-title'>Card title</h5>
-								<p className='card-text'>
-									This is a longer card with supporting text below as a natural
-									lead-in to additional content. This content is a little bit
-									longer.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
+				<div className='row'>{this.fetchNewReleases()}</div>
 			</React.Fragment>
 		)
 	}
 }
 
-export default NewReleases
+const mapStatetoProps = state => ({
+	new_releases: state.new_releases
+})
+
+export default connect(
+	mapStatetoProps,
+	{
+		getNewReleases
+	}
+)(NewReleases)

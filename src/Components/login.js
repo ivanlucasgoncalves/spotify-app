@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from './spotify-logo.svg'
+import logo from '../images/spotify-logo.svg'
 
 class Login extends React.Component {
 	state = {
@@ -14,7 +14,7 @@ class Login extends React.Component {
 				<div className='login__box d-flex flex-column align-items-center'>
 					<img className='img-fluid mb-4' src={logo} />
 					<a
-						className='btn btn-success login__link'
+						className='btn btn-success btn-login'
 						href='http://localhost:8899/login'
 						onClick={this.handleClick}
 					>

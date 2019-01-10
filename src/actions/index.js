@@ -9,6 +9,7 @@ export const GET_USER = 'GET_USER'
 export const GET_USER_PLAYLISTS = 'GET_USER_PLAYLISTS'
 export const GET_RECENTLY_PLAYED = 'GET_RECENTLY_PLAYED'
 export const GET_MADE_FOR = 'GET_MADE_FOR'
+export const GET_NEW_RELEASES = 'GET_NEW_RELEASES'
 
 // Action creators
 const getHashParams = () => {
@@ -74,4 +75,13 @@ export const getMadeFor = () => dispatch => {
 				payload: data.items
 			})
 		)
+}
+
+export const getNewReleases = () => dispatch => {
+	spotifyApi.getNewReleases({ limit: 4 }).then(data =>
+		dispatch({
+			type: GET_NEW_RELEASES,
+			payload: data.albums.items
+		})
+	)
 }

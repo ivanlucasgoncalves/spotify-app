@@ -19,7 +19,8 @@ class App extends React.Component {
 		this.props.authLogin()
 	}
 	render({ token } = this.props) {
-		spotifyApi.setAccessToken(token)
+		if (token) spotifyApi.setAccessToken(token)
+
 		return (
 			<React.Fragment>
 				<div className='container-fluid'>
@@ -34,7 +35,7 @@ class App extends React.Component {
 							</div>
 							<div className='col-12 col-md-9 col-xl-10'>
 								<main className='main'>
-									<HeroMessage />
+									{/*<HeroMessage />*/}
 									<section className='main__made-for mb-5'>
 										<MadeFor />
 									</section>
