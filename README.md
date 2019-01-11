@@ -1,2 +1,3 @@
-# react-with-webpack
-React app with webpack | Boilerplate
+# spotify-react-app
+
+Spotify App with React plus Redux
