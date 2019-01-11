@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { getUser, getRecentlyPlayed, getUserPlaylists } from '../actions'
+import { getUser } from '../actions/user'
+import { getRecentlyPlayed } from '../actions/recentlyPlayed'
+import { getUserPlaylists } from '../actions/userPlaylists'
 
 import logo from '../images/spotify-logo.svg'
 

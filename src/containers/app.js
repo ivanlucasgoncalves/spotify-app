@@ -2,14 +2,14 @@ import React from 'react'
 import SpotifyWebApi from 'spotify-web-api-js'
 import { connect } from 'react-redux'
 
-import { authLogin } from '../actions'
+import { authLogin } from '../actions/authLogin'
 
 import Sidebar from './sidebar'
-import HeroMessage from './heroMessage'
+import HeroMessage from '../components/heroMessage'
 import MadeFor from './madeFor'
 import RecentlyPlayed from './recentlyPlayed'
 import NewReleases from './newReleases'
-import Login from './login'
+import Login from '../components/login'
 
 // Instantiating
 const spotifyApi = new SpotifyWebApi()

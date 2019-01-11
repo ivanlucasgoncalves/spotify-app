@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { getMadeFor } from '../actions'
+import { getMadeFor } from '../actions/madeFor'
 
 class MadeFor extends React.Component {
 	componentDidMount = () => {

@@ -1,4 +1,4 @@
-import { AUTH_LOGIN } from '../actions'
+import { AUTH_LOGIN } from '../actions/authLogin'
 
 const initialState = {
 	access_token: null

@@ -1,4 +1,4 @@
-import { GET_NEW_RELEASES } from '../actions'
+import { GET_NEW_RELEASES } from '../actions/newReleases'
 
 const initialState = []
 

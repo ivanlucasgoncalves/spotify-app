@@ -1,4 +1,4 @@
-import { GET_USER_PLAYLISTS } from '../actions'
+import { GET_USER_PLAYLISTS } from '../actions/userPlaylists'
 
 const initialState = []
 

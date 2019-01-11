@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { getNewReleases } from '../actions'
+import { getNewReleases } from '../actions/newReleases'
 
 class NewReleases extends React.Component {
 	componentDidMount() {
@@ -9,7 +9,7 @@ class NewReleases extends React.Component {
 	}
 	fetchNewReleases = ({ new_releases } = this.props) => {
 		return new_releases.map(album => (
-			<div className='col-6 col-lg-3 mb-4 mb-lg-0'>
+			<div key={album.id} className='col-6 col-lg-3 mb-4 mb-lg-0'>
 				<img src={album.images[0].url} className='img-fluid rounded' />
 			</div>
 		))

@@ -1,4 +1,4 @@
-import { GET_RECENTLY_PLAYED } from '../actions'
+import { GET_RECENTLY_PLAYED } from '../actions/recentlyPlayed'
 
 const initialState = []
 

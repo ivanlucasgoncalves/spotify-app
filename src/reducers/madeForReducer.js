@@ -1,4 +1,4 @@
-import { GET_MADE_FOR } from '../actions'
+import { GET_MADE_FOR } from '../actions/madeFor'
 
 const initialState = []
 
